@@ -1,0 +1,18 @@
+[user]
+  name = myname
+  email = my@name.com
+[alias]
+  st = status
+  lg = log --name-status
+  ci = commit
+  br = branch
+  co = checkout
+  df = diff
+  dc = diff --cached
+  lp = log -p
+  logf = log --pretty=fuller
+  lol = log --graph --decorate --pretty=oneline --abbrev-commit
+  lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+  ls = ls-files
+  # Show files ignored by git:
+  ign = ls-files -o -i --exclude-standard
