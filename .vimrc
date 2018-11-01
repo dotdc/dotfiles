@@ -8,7 +8,6 @@ set nocompatible
 " Vundle Configuration
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -16,7 +15,6 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'pearofducks/ansible-vim'
 Plugin 'fatih/vim-hclfmt'
 Plugin 'fatih/vim-go'
-
 call vundle#end()
 filetype plugin indent on
 
