@@ -1,6 +1,5 @@
-# Bash Config
 ################################################################################
-#                              SHELL OPTIONS
+# Shell Options
 ################################################################################
 
 shopt -s histappend
@@ -8,24 +7,23 @@ shopt -s checkwinsize
 shopt -s expand_aliases
 
 ################################################################################
-#                                ENV VARS
+# Environment Variables
 ################################################################################
 
-export LANG=en_US.UTF-8
-#export PATH=~/scripts:$PATH
-export TERM=rxvt-unicode-256color
+export LANG="en_US.UTF-8"
+export TERM="rxvt-unicode-256color"
 
 export VISUAL="/usr/bin/vim -p -X"
-export EDITOR=/usr/bin/vim
+export EDITOR="/usr/bin/vim"
 
 export HISTSIZE=5000
 export HISTFILESIZE=10000
 export HISTCONTROL=ignoreboth
-export HISTIGNORE='pwd:clear'
-export HISTTIMEFORMAT="$(echo -e '\e[38;5;202m')| %d/%m/%Y %T |$(echo -e '\e[38;5;46m') "
+export HISTIGNORE="pwd:clear"
+export HISTTIMEFORMAT="$(echo -e ${G})| %d/%m/%Y %T |$(echo -e ${W}) "
 
 ################################################################################
-#                                ALIASES
+# Aliases
 ################################################################################
 
 alias vi="vim -b"
@@ -36,29 +34,29 @@ alias ll="ls -hails --color=auto"
 
 alias grep="grep --color=auto --binary-files=without-match --devices=skip"
 
-alias motd="cat /etc/motd"
+alias pacman="sudo pacman --color auto"
+
 alias wan="dig +short myip.opendns.com @resolver1.opendns.com"
 
-################################################################################
-#                                 COLORS
-################################################################################
-
-gray=$(echo -e '\e[0;90m')
-red=$(echo -e '\e[0;91m')
-green=$(echo -e '\e[0;92m')
-yellow=$(echo -e '\e[0;93m')
-blue=$(echo -e '\e[0;94m')
-magenta=$(echo -e '\e[0;95m')
-cyan=$(echo -e '\e[0;96m')
-white=$(echo -e '\e[0;97m')
-black=$(echo -e '\e[0;97m')
+alias tree="tree -aC --dirsfirst"
 
 ################################################################################
-#                                FUNCTIONS
+# Colors
+################################################################################
+
+W="\\e[0m"  # White
+R="\\e[91m" # Red
+G="\\e[92m" # Green
+B="\\e[96m" # Blue
+Y="\\e[93m" # Yellow
+P="\\e[95m" # Purple
+
+################################################################################
+# Functions
 ################################################################################
 
 # Molokai colors for man
-function man
+man()
 {
     env LESS_TERMCAP_mb=$(printf "\e[38;5;202m") \
     LESS_TERMCAP_md=$(printf "\e[38;5;202m") \
@@ -70,55 +68,58 @@ function man
     man "$@"
 }
 
+# SSH to given host in a new TMUX tab
+tab()
+{
+    # $1 = user@host
+    # $2 = ssh port (default: 22)
+    [[ -n $2 ]] && port=$2 || port=22
+    name=$(echo $1 | sed -e 's/.*@//' -e 's/\(.*\)/\U\1/')
+    tmux new-window -n ${name} "ssh $1 -A -p ${port} -t 'TERM=xterm ; bash'"
+}
+
+################################################################################
+# Prompt
+################################################################################
+
+RED=$(echo -e "\[\e[38;5;1m\]")
+WHITE=$(echo -e "\[\e[38;5;7m\]")
+BLUE=$(echo -e "\[\e[38;5;45m\]")
+GREEN=$(echo -e "\[\e[38;5;46m\]")
+ORANGE=$(echo -e "\[\e[38;5;202m\]")
+
+# Change char for root
+[[ "$(id -u)" -eq 0 ]] && PS1_USER="#" || PS1_USER="\$"
+
 # Display the current git branch
-function __git_ps1
+__git_ps1()
 {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 
-# Open a new TMUX tab with smart name and connect to given host
-function tab
-{
-    NAME=`echo $1 | sed 's/\(.*\)/\U\1/'`;
-    tmux new-window -n ${NAME} "ssh root@$1 -p 22"
-}
-
-# Autocompletion from ansible hosts file for the 'tab' function
-#complete -W "`egrep -v "^$|^\[|ssh_port|^#" ~/ansible/inventory/hosts | sort -u`" tab
-
-################################################################################
-#                             PROMPT STATEMENT
-################################################################################
-
-RED=$(echo -e '\[\e[38;5;1m\]')
-WHITE=$(echo -e '\[\e[38;5;7m\]')
-BLUE=$(echo -e '\[\e[38;5;45m\]')
-GREEN=$(echo -e '\[\e[38;5;46m\]')
-ORANGE=$(echo -e '\[\e[38;5;202m\]')
-
-# Change char for root
-if [ "`id -u`" -eq 0 ]
-then
-    PS1_USER="#"
-else
-    PS1_USER="\$"
-fi
-
-function __prompt_command
+# Print return code if not 0 
+__prompt_command()
 {
     EXIT=$?
-
-    # Print return code if not 0
-    if [[ $EXIT != 0 ]] ; then
-        echo -e "${red}[ Return code : $EXIT ]${white}"
-    fi
+    [[ ${EXIT} != 0 ]] && echo -e "${R}[ Return code : ${EXIT} ]${W}"
 }
 
 export PS1="${ORANGE}\u${WHITE}@${GREEN}\h ${WHITE}\W${BLUE}\$(__git_ps1) ${PS1_USER} ${WHITE}"
-export PS2="${BLUE}⦔${WHITE} "
-export PS4="${BLUE}Line ${LINENO} ✚${WHITE} "
+export PS2="${BLUE}>${WHITE} "
+export PS4="${BLUE}Line ${LINENO} >${WHITE} "
 export PROMPT_COMMAND=__prompt_command
 
-if [[ ! "$TMUX_PANE" ]] ; then
+################################################################################
+# Automatic actions
+################################################################################
+
+# Start tmux automatically
+if [[ ! "${TMUX_PANE}" && "${TERM_PROGRAM}" != "vscode" ]] ; then
     tmux new-session -n WORKSTATION
 fi
+
+################################################################################
+# Source custom 
+################################################################################
+
+[[ -f ~/.bashrc_imrtfm ]] && . ~/.bashrc_imrtfm
