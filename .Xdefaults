@@ -3,10 +3,10 @@
 *geometry: 240x40
 *saveLines: 10000
 *cutchars: "`\"'&()*,:;<=>?[\\]^{|}$"
-*font: xft:Sauce Code Powerline:size=12
-*boldFont: xft:Sauce Code Powerline:size=12
-*italicFont: xft:Sauce Code Powerline:size=12
-*bolditalicFont: xft:Sauce Code Powerline:size=12
+*font: xft:Sauce Code Powerline:size=13
+*boldFont: xft:Sauce Code Powerline:size=13
+*italicFont: xft:Sauce Code Powerline:size=13
+*bolditalicFont: xft:Sauce Code Powerline:size=13
 *scrollBar: false
 *visualBell: true
 *letterSpace: -1
