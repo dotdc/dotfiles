@@ -37,6 +37,11 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'pearofducks/ansible-vim'
 Plugin 'fatih/vim-hclfmt'
 Plugin 'fatih/vim-go'
+Plugin 'elzr/vim-json'
+Plugin 'stephpy/vim-yaml'
+Plugin 'cespare/vim-toml'
+Plugin 'hashivim/vim-terraform'
+Plugin 'hashivim/vim-packer'
 call vundle#end()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
