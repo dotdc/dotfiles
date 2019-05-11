@@ -41,14 +41,14 @@ vim:
 	@cp ~/.vimrc ~/.bak/ &> /dev/null | true
 	@rm ~/.vimrc &> /dev/null | true
 	ln -s ${PWD}/.vimrc ~/.vimrc
-	# ~/.vim/colors
-	@cp -r ~/.vim/colors ~/.bak/ &> /dev/null | true
-	@rm -r ~/.vim/colors &> /dev/null | true
-	ln -s ${PWD}/.vim/colors ~/.vim/colors
 	# Vundle & Plugins
 	@rm -rf ~/.vim/bundle/Vundle.vim | true
 	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 	vim +PluginInstall +qall
+	# ~/.vim/colors
+	@cp -r ~/.vim/colors ~/.bak/ &> /dev/null | true
+	@rm -r ~/.vim/colors &> /dev/null | true
+	ln -s ${PWD}/.vim/colors ~/.vim/colors
 
 .PHONY: xorg
 xorg:
