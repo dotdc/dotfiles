@@ -3,5 +3,5 @@
     email: true
   script:
     - make
-    - shellcheck ~/.bashrc
-    - shellcheck ~/.bash_profile
+    - shellcheck --severity=warning ~/.bashrc
+    - shellcheck --severity=warning ~/.bash_profile
