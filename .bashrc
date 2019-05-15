@@ -21,26 +21,27 @@ export HISTSIZE=5000
 export HISTFILESIZE=10000
 export HISTCONTROL=ignoreboth
 export HISTIGNORE="pwd:clear"
-#export HISTTIMEFORMAT="$(echo -e "${G}")| %d/%m/%Y %T |$(echo -e "${W}") "
 export HISTTIMEFORMAT="| %d/%m/%Y %T | "
 
 ################################################################################
 # Aliases
 ################################################################################
 
+# Default
 alias vi="vim -b"
 alias vim="vim -b"
-
 alias ls="ls --color=auto"
 alias ll="ls -hails --color=auto"
-
 alias grep="grep --color=auto --binary-files=without-match --devices=skip"
-
-alias pacman="sudo pacman --color auto"
-
+alias tree="tree -aC --dirsfirst"
 alias wan="dig +short myip.opendns.com @resolver1.opendns.com"
 
-alias tree="tree -aC --dirsfirst"
+# Archlinux
+alias pacman="sudo pacman --color auto"
+
+# Kubernetes
+alias k="kubectl"
+alias kk="k3s kubectl"
 
 ################################################################################
 # Colors
