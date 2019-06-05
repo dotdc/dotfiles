@@ -1,0 +1,11 @@
+---
+kind: pipeline
+name: default
+
+steps:
+- name: lint
+  image: centos
+  commands:
+    - make
+    - shellcheck ~/.bashrc
+    - shellcheck ~/.bash_profile

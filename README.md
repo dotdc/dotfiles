@@ -1,6 +1,6 @@
 # dotfiles
 
-[![Travis CI](https://travis-ci.org/imrtfm/dotfiles.svg?branch=master)](https://travis-ci.org/imrtfm/dotfiles)
+[![Build Status](https://cloud.drone.io/api/badges/imrtfm/dotfiles/status.svg)](https://cloud.drone.io/imrtfm/dotfiles)
 
 ## Description
 

@@ -1,7 +1,0 @@
----
-  notifications:
-    email: true
-  script:
-    - make
-    - shellcheck ~/.bashrc
-    - shellcheck ~/.bash_profile
