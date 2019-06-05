@@ -6,7 +6,7 @@ steps:
 - name: lint
   image: archlinux/base:latest
   commands:
-    - pacman -Sy git make shellcheck vim
+    - pacman -Sy --noconfirm git make shellcheck vim
     - make
     - shellcheck ~/.bashrc
     - shellcheck ~/.bash_profile
