@@ -6,7 +6,7 @@ steps:
 - name: lint
   image: centos
   commands:
-    - yum install -y make ShellCheck
+    - yum install -y git make ShellCheck
     - make
     - shellcheck ~/.bashrc
     - shellcheck ~/.bash_profile
