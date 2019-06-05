@@ -4,9 +4,9 @@ name: default
 
 steps:
 - name: lint
-  image: centos
+  image: archlinux/base:latest
   commands:
-    - yum install -y git make ShellCheck vim
+    - pacman -Sy git make shellcheck vim
     - make
     - shellcheck ~/.bashrc
     - shellcheck ~/.bash_profile
