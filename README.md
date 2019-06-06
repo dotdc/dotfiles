@@ -14,6 +14,7 @@ To install the required packages:
 
 ```console
 pacman -Sy git \
+           make \
            rxvt-unicode \
            tmux \
            vim
