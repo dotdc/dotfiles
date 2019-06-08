@@ -1,6 +1,6 @@
 ---
 kind: pipeline
-name: default
+name: Pipeline
 
 steps:
 - name: lint
