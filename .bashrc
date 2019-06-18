@@ -33,7 +33,7 @@ alias vim="vim -b"
 alias ls="ls --color=auto"
 alias ll="ls -hails --color=auto"
 alias grep="grep --color=auto --binary-files=without-match --devices=skip"
-alias tree="tree -aC --dirsfirst"
+alias tree="tree -C --dirsfirst"
 alias wan="dig +short myip.opendns.com @resolver1.opendns.com"
 
 # Archlinux
