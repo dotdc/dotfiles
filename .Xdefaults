@@ -8,7 +8,7 @@
 *italicFont: xft:Sauce Code Powerline:size=13
 *bolditalicFont: xft:Sauce Code Powerline:size=13
 *scrollBar: false
-*visualBell: true
+*visualBell: false
 *letterSpace: -1
 *cursorBlink: true
 *cursorUnderline: 1
