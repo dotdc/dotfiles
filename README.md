@@ -10,7 +10,7 @@ My Arch Linux dotfiles.
 
 ### Requirements
 
-To install the required packages:
+Install the required packages:
 
 ```console
 pacman -Sy git \
