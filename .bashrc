@@ -122,4 +122,4 @@ fi
 ################################################################################
 
 # shellcheck disable=SC1090
-[[ -f ~/.bashrc_imrtfm ]] && . ~/.bashrc_imrtfm
+[[ -f ~/.bashrc_imrtfm ]] && . ~/.bashrc_imrtfm || true
