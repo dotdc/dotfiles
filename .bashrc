@@ -39,10 +39,6 @@ alias wan="dig +short myip.opendns.com @resolver1.opendns.com"
 # Archlinux
 alias pacman="sudo pacman --color auto"
 
-# Kubernetes
-alias k="kubectl"
-alias kk="k3s kubectl"
-
 ################################################################################
 # Colors
 ################################################################################
@@ -53,6 +49,21 @@ export G="\\e[92m" # Green
 export B="\\e[96m" # Blue
 export Y="\\e[93m" # Yellow
 export P="\\e[95m" # Purple
+
+################################################################################
+# Kubernetes
+################################################################################
+
+# Aliases and autocomplete
+[[ $(type kubectl) ]] && source <(kubectl completion bash)
+alias k=kubectl
+complete -F __start_kubectl k
+
+# Switch namespace for the current context
+kns()
+{
+    kubectl config set-context --current --namespace="${1}"
+}
 
 ################################################################################
 # Functions
