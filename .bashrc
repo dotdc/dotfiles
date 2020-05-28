@@ -55,8 +55,8 @@ export P="\\e[95m" # Purple
 ################################################################################
 
 # Aliases and autocomplete
-[[ $(type kubectl) ]] && source <(kubectl completion bash)
-alias k=kubectl
+[[ $(type kubectl &> /dev/null) ]] && source <(kubectl completion bash)
+alias k="kubectl"
 complete -F __start_kubectl k
 
 # Switch namespace for the current context
