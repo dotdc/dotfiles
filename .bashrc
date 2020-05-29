@@ -59,6 +59,9 @@ export P="\\e[95m" # Purple
 alias k="kubectl"
 complete -F __start_kubectl k
 
+# Alias to update current context
+alias kc="kubectl config set current-context"
+
 # Switch namespace for the current context
 kns()
 {
