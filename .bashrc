@@ -39,6 +39,9 @@ alias wan="dig +short myip.opendns.com @resolver1.opendns.com"
 # Archlinux
 alias pacman="sudo pacman --color auto"
 
+# Other
+alias docker="sudo docker"
+
 ################################################################################
 # Colors
 ################################################################################
@@ -67,6 +70,9 @@ kns()
 {
     kubectl config set-context --current --namespace="${1}"
 }
+
+# k3s
+alias kk="sudo k3s kubectl"
 
 ################################################################################
 # Functions
