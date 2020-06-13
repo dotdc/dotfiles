@@ -1,6 +1,6 @@
 *title: Terminal
 *loginShell: false
-*geometry: 240x40
+*geometry: 250x50
 *saveLines: 10000
 *cutchars: "`\"'&()*,:;<=>?[\\]^{|}$"
 *font: xft:Sauce Code Powerline:size=13
