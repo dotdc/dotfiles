@@ -58,7 +58,7 @@ export P="\\e[95m" # Purple
 ################################################################################
 
 # Aliases and autocomplete
-[[ $(type kubectl &> /dev/null) ]] && source <(kubectl completion bash)
+[[ $(type kubectl) ]] && source <(kubectl completion bash)
 alias k="kubectl"
 complete -F __start_kubectl k
 
@@ -70,9 +70,6 @@ kns()
 {
     kubectl config set-context --current --namespace="${1}"
 }
-
-# k3s
-alias kk="sudo k3s kubectl"
 
 ################################################################################
 # Functions
