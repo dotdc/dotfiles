@@ -19,3 +19,5 @@
   ign = ls-files -o -i --exclude-standard
 [merge]
   tool = meld
+[pull]
+  rebase = false
