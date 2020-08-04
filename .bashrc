@@ -40,6 +40,7 @@ alias wan="dig +short myip.opendns.com @resolver1.opendns.com"
 alias pacman="sudo pacman --color auto"
 
 # Other
+alias ip="ip -c"
 alias docker="sudo docker"
 
 ################################################################################
