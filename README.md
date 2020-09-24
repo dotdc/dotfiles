@@ -1,10 +1,10 @@
 # dotfiles
 
-[![Build Status](https://cloud.drone.io/api/badges/imrtfm/dotfiles/status.svg)](https://cloud.drone.io/imrtfm/dotfiles)
+[![Build Status](https://cloud.drone.io/api/badges/dotdc/dotfiles/status.svg)](https://cloud.drone.io/dotdc/dotfiles)
 
 ## Description
 
-My Arch Linux dotfiles.
+My dotfiles, mainly used on Archlinux.
 
 ## Installation
 
@@ -22,14 +22,15 @@ pacman -Sy git \
 
 ### Dotfiles
 
-The dotfiles installation will:
+The following commands will:
 
-- Make a copy of your current dotfiles in the ~/.bak folder.
-- Delete the previously copied dotfiles.
-- Create symlinks from this repo to your home folder.
+- Copy current dotfiles in `~/.bak`.
+- Delete current dotfiles (original location only).
+- Create symlinks for dotfiles to the local copy of this repository.
+- Install Vundle & Vim plugins
 
 ```console
-git clone https://github.com/imrtfm/dotfiles.git
+git clone https://github.com/dotdc/dotfiles.git
 cd dotfiles
 make
 ```
