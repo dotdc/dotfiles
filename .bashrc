@@ -136,8 +136,8 @@ if [[ ! "${TMUX_PANE}" && "${TERM_PROGRAM}" != "vscode" ]] ; then
 fi
 
 ################################################################################
-# Source custom 
+# Source extra bash configuration
 ################################################################################
 
 # shellcheck disable=SC1090
-[[ -f ~/.bashrc_imrtfm ]] && . ~/.bashrc_imrtfm || true
+[[ -f ~/.bashrc_extra ]] && . ~/.bashrc_extra || true
