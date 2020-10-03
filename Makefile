@@ -3,7 +3,7 @@
 SHELL := /bin/bash
 
 .PHONY: install
-install: init bash fonts tmux vim xorg end
+install: init bash fonts tmux vim xorg vscode end
 
 .PHONY: init
 init:
@@ -61,6 +61,14 @@ xorg:
 	@cp ~/.Xressources ~/.bak/ &> /dev/null | true
 	@rm ~/.Xressources &> /dev/null | true
 	ln -s ${PWD}/.Xressources ~/.Xressources
+
+.PHONY: vscode
+vscode:
+	# ~/.config/Code/User/settings.json
+	@cp ~/.config/Code/User/settings.json ~/.bak/vscode.settings.json &> /dev/null | true
+	@rm ~/.config/Code/User/settings.json &> /dev/null | true
+	@mkdir -p ~/.config/Code/User
+	ln -s ${PWD}/.config/Code/User/settings.json ~/.config/Code/User/settings.json
 
 .PHONY: end
 end:
