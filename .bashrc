@@ -59,6 +59,7 @@ export P="\\e[95m" # Purple
 ################################################################################
 
 # Aliases and autocomplete
+# shellcheck disable=SC1090
 [[ $(type kubectl) ]] && source <(kubectl completion bash)
 alias k="kubectl"
 complete -F __start_kubectl k
@@ -139,5 +140,5 @@ fi
 # Source extra bash configuration
 ################################################################################
 
-# shellcheck disable=SC1090
+# shellcheck disable=SC1090,SC2015
 [[ -f ~/.bashrc_extra ]] && . ~/.bashrc_extra || true
