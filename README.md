@@ -4,13 +4,11 @@
 
 ## Description
 
-My dotfiles, mainly used on Archlinux.
+My dotfiles, mainly used on Arch Linux.
 
-## Installation
+## Requirements
 
-### Requirements
-
-Install the required packages:
+Install the required packages, for Arch Linux:
 
 ```console
 pacman -Sy git \
@@ -20,13 +18,13 @@ pacman -Sy git \
            vim
 ```
 
-### Dotfiles
+## Installation
 
-The following commands will:
+The `make` command will:
 
 - Copy current dotfiles in `~/.bak`.
 - Delete current dotfiles (original location only).
-- Create symlinks for dotfiles to the local copy of this repository.
+- Create symlinks based on the location of this repository.
 - Install Vundle & Vim plugins
 
 ```console
