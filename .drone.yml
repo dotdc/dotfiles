@@ -4,7 +4,7 @@ name: Pipeline
 
 steps:
 - name: lint
-  image: archlinux/base:latest
+  image: archlinux:latest
   commands:
     - pacman -Sy --noconfirm git make shellcheck vim
     - make
