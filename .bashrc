@@ -107,7 +107,7 @@ tab()
 WHITE=$(echo -e "\[\e[38;5;7m\]")
 BLUE=$(echo -e "\[\e[38;5;45m\]")
 GREEN=$(echo -e "\[\e[38;5;46m\]")
-ORANGE=$(echo -e "\[\e[38;5;202m\]")
+RED=$(echo -e "\[\e[38;5;204m\]")
 
 # Display the current git branch
 __git_ps1()
@@ -122,7 +122,7 @@ __prompt_command()
     [[ ${EXIT} != 0 ]] && echo -e "${R}[ Return code : ${EXIT} ]${W}"
 }
 
-export PS1="${ORANGE}\u${WHITE}@${GREEN}\h ${WHITE}\W${BLUE}\$(__git_ps1) $ ${WHITE}"
+export PS1="${RED}\u${WHITE}@${GREEN}\h ${WHITE}\W${BLUE}\$(__git_ps1) $ ${WHITE}"
 export PS2="${BLUE}>${WHITE} "
 export PS4="${BLUE}Line ${LINENO} >${WHITE} "
 export PROMPT_COMMAND=__prompt_command

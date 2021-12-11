@@ -5,10 +5,9 @@
     "telemetry.enableCrashReporter": false,
     "telemetry.enableTelemetry": false,
     "explorer.confirmDragAndDrop": false,
-    "workbench.editorAssociations": [
-        {
-            "viewType": "jupyter.notebook.ipynb",
-            "filenamePattern": "*.ipynb"
-        }
-    ]
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter.notebook.ipynb"
+    },
+    "explorer.confirmDelete": false,
+    "workbench.iconTheme": "file-icons"
 }

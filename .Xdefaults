@@ -31,3 +31,41 @@
 *color14: rgb:54/fc/fc
 *color15: rgb:fc/fc/fc
 *colorBD: rgb:fc/fc/fc
+!black
+*color0:                rgb:3/3/3
+*color8:                rgb:7/7/7
+
+!red
+*color1:                rgb:f/3/7
+*color9:                rgb:f/3/b
+
+!green
+*color2:                rgb:7/f/3
+*color10:               rgb:b/f/3
+
+!yellow
+*color3:                rgb:f/7/3
+*color11:               rgb:f/b/3
+
+!blue
+*color4:                rgb:3/7/f
+*color12:               rgb:3/b/f
+
+!magenta
+*color5:                rgb:7/3/f
+*color13:               rgb:b/3/f
+
+!cyan
+*color6:                rgb:3/f/7
+*color14:               rgb:3/f/b
+
+!white
+*color7:                rgb:b/b/b
+*color15:               rgb:f/f/f
+
+*cursorColor:           rgb:f/f/f
+*cursorColor2:          rgb:3/3/3
+
+*highlightColor:        rgb:f/b/3
+*highlightTextColor:    rgb:2/2/2
+
