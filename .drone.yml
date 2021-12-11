@@ -4,10 +4,9 @@ name: Pipeline
 
 steps:
 - name: lint
-  image: archlinux:latest
+  image: ubuntu:latest
   commands:
-    - mkdir -p /var/lib/pacman/
-    - pacman -Sy --noconfirm git make shellcheck vim
+    - apt update && apt install -y bash git make shellcheck vim
     - make
     - shellcheck ~/.bashrc
     - shellcheck ~/.bash_profile
