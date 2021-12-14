@@ -137,7 +137,7 @@ export PROMPT_COMMAND=__prompt_command
 
 # Start tmux automatically
 if [[ ! "${TMUX_PANE}" && "${TERM_PROGRAM}" != "vscode" ]] ; then
-    tmux new-session -n WORKSTATION
+    tmux new-session -n LAPTOP
 fi
 
 ################################################################################
