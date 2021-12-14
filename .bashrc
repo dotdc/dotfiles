@@ -55,7 +55,7 @@ export Y="\\e[93m" # Yellow
 export P="\\e[95m" # Purple
 
 ################################################################################
-# Kubernetes
+# Cloud / Kubernetes 
 ################################################################################
 
 # Aliases and autocomplete
@@ -72,6 +72,10 @@ kns()
 {
     kubectl config set-context --current --namespace="${1}"
 }
+
+# AWS CLI
+# shellcheck disable=SC1090
+[[ $(type aws) ]] && complete -C /usr/local/bin/aws_completer aws
 
 ################################################################################
 # Functions
