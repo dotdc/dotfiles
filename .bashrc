@@ -38,6 +38,7 @@ alias wan="dig +short myip.opendns.com @resolver1.opendns.com"
 
 # Archlinux
 alias pacman="sudo pacman --color auto"
+alias yay="yay --color auto"
 
 # Other
 alias ip="ip -c"
