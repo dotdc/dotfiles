@@ -7,6 +7,6 @@ steps:
   image: ubuntu:latest
   commands:
     - apt update && apt install -y bash git make shellcheck vim
-    - make
+    - make dotfiles vim
     - shellcheck ~/.bashrc
     - shellcheck ~/.bash_profile

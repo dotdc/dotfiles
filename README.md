@@ -20,15 +20,19 @@ pacman -Sy git \
 
 ## Installation
 
-The `make` command will:
+Several installation options:
 
-- Copy current dotfiles in `~/.bak`.
-- Delete current dotfiles (original location only).
-- Create symlinks based on the location of this repository.
-- Install Vundle & Vim plugins
+| Command         | Description                                           |
+|-----------------|-------------------------------------------------------|
+| `make dotfiles` | Backup current dotfiles in `~/.bak` & install theses  |
+| `make vim`      | Configure Vim and install Vundle & Vim plugins        |
+| `make vscode`   | Configure vscode & install extensions                 |
+| `make all`      | Make all the above                                    |
+
+## Example usage
 
 ```console
 git clone https://github.com/dotdc/dotfiles.git
 cd dotfiles
-make
+make dotfiles
 ```
