@@ -4,7 +4,7 @@ SHELL := /bin/bash
 .DEFAULT_GOAL := dotfiles
 
 .PHONY: dotfiles
-dotfiles: init bash fonts tmux xorg end
+dotfiles: init bash fonts tmux xorg gnome end
 
 .PHONY: all
 all: dotfiles vim vscode
