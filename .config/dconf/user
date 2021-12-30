@@ -1,0 +1,5 @@
+# Set Gnome default favorites apps
+# To find apps:
+# find / -iname "*desktop" -type f -not -path "/media*" 2> /dev/null
+[org/gnome/shell]
+favorite-apps = ['urxvt.desktop', 'nautilus.desktop', 'brave-browser.desktop', 'firefox.desktop', 'vivaldi-stable.desktop', 'notion-app.desktop', 'slack.desktop', 'visual-studio-code.desktop', 'torguard.desktop']

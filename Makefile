@@ -49,6 +49,13 @@ xorg:
 	@rm ~/.Xressources &> /dev/null | true
 	ln -s ${PWD}/.Xressources ~/.Xressources
 
+.PHONY: gnome
+gnome:
+    @cp ~/.config/dconf/user ~/.bak/ &> /dev/null | true
+    @rm ~/.config/dconf/user &> /dev/null | true
+	@mkdir -p ~/.config/dconf
+    ln -s ${PWD}/.config/dconf/user ~/.config/dconf/user
+
 .PHONY: vim
 vim:
 	################################################################################
