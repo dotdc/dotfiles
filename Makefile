@@ -51,10 +51,10 @@ xorg:
 
 .PHONY: gnome
 gnome:
-    @cp ~/.config/dconf/user ~/.bak/ &> /dev/null | true
-    @rm ~/.config/dconf/user &> /dev/null | true
+	@cp ~/.config/dconf/user ~/.bak/ &> /dev/null | true
+	@rm ~/.config/dconf/user &> /dev/null | true
 	@mkdir -p ~/.config/dconf
-    ln -s ${PWD}/.config/dconf/user ~/.config/dconf/user
+	ln -s ${PWD}/.config/dconf/user ~/.config/dconf/user
 
 .PHONY: vim
 vim:
