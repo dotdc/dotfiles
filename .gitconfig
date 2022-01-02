@@ -1,23 +1,28 @@
 [user]
-  name = myname
-  email = my@name.com
+  name = David
+  email = davidcalvertfr@gmail.com
 [alias]
   st = status
   pp = pull --prune
-  lg = log --name-status
   ci = commit -s
   br = branch
   co = checkout
   df = diff
   dc = diff --cached
   lp = log -p
-  logf = log --pretty=fuller
-  lol = log --graph --decorate --pretty=oneline --abbrev-commit
+  log = log --name-status
+  lol = log --graph --decorate --pretty=oneline --abbrev-commit -n 20
   lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
   ls = ls-files
   # Show files ignored by git
   ign = ls-files -o -i --exclude-standard
-[merge]
-  tool = meld
 [pull]
   rebase = false
+[merge]
+  tool = vscode
+[mergetool "vscode"]
+  cmd = code --wait --new-window $MERGED
+[diff]
+  tool = vscode
+[difftool "vscode"]
+  cmd = code --wait --diff --new-window $LOCAL $REMOTE
