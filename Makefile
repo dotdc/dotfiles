@@ -94,6 +94,7 @@ vscode:
 	code --install-extension ms-python.python
 	code --install-extension redhat.vscode-yaml
 	code --install-extension vscode-icons-team.vscode-icons
+	code --install-extension wholroyd.HCL
 
 .PHONY: end
 end:
