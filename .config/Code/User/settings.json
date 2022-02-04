@@ -9,5 +9,5 @@
         "*.ipynb": "jupyter.notebook.ipynb"
     },
     "explorer.confirmDelete": false,
-    "workbench.iconTheme": "file-icons"
+    "workbench.iconTheme": "vscode-icons"
 }
