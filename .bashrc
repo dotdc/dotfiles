@@ -77,7 +77,7 @@ kns()
 
 # AWS CLI
 # shellcheck disable=SC1090
-[[ $(type aws) ]] && complete -C /usr/local/bin/aws_completer aws
+[[ $(type aws) ]] && complete -C /usr/bin/aws_completer aws
 
 ################################################################################
 # Functions
