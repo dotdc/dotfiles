@@ -1,10 +1,13 @@
 [user]
   name = David
   email = davidcalvertfr@gmail.com
+  signingkey = 56431FEC46391E05
+[commit]
+  gpgSign = true
 [alias]
   st = status
   pp = pull --prune
-  ci = commit -s
+  ci = commit -s -S
   br = branch
   co = checkout
   df = diff
