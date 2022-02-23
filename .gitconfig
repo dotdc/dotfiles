@@ -8,6 +8,7 @@
   st = status
   pp = pull --prune
   ci = commit -s -S
+  cia = git commit --amend
   br = branch
   co = checkout
   df = diff
