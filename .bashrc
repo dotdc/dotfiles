@@ -48,12 +48,12 @@ alias docker="sudo docker"
 # Colors
 ################################################################################
 
-export W="\\e[0m"  # White
-export R="\\e[91m" # Red
-export G="\\e[92m" # Green
-export B="\\e[96m" # Blue
-export Y="\\e[93m" # Yellow
-export P="\\e[95m" # Purple
+export W=$'\e[0m'  # White
+export R=$'\e[91m' # Red
+export G=$'\e[92m' # Green
+export B=$'\e[96m' # Blue
+export Y=$'\e[93m' # Yellow
+export P=$'\e[95m' # Purple
 
 ################################################################################
 # Cloud / Kubernetes 
