@@ -9,7 +9,7 @@
   pp = pull --prune
   pb = !git push --set-upstream origin $(git branch --show-current)
   ci = commit -s -S
-  cia = git commit --amend
+  cia = commit --amend
   br = branch
   co = checkout
   df = diff
