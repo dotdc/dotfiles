@@ -85,6 +85,7 @@ vscode:
 
 	code --install-extension DavidAnson.vscode-markdownlint
 	code --install-extension ecmel.vscode-html-css
+	code --install-extension GitHub.copilot
 	code --install-extension GitHub.remotehub
 	code --install-extension GitHub.vscode-pull-request-github
 	code --install-extension golang.go
@@ -94,7 +95,7 @@ vscode:
 	code --install-extension ms-python.python
 	code --install-extension redhat.vscode-yaml
 	code --install-extension vscode-icons-team.vscode-icons
-	code --install-extension wholroyd.HCL
+	code --install-extension HashiCorp.HCL
 
 .PHONY: end
 end:
