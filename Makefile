@@ -96,6 +96,7 @@ vscode:
 	code --install-extension redhat.vscode-yaml
 	code --install-extension vscode-icons-team.vscode-icons
 	code --install-extension HashiCorp.HCL
+	code --install-extension yzhang.markdown-all-in-one
 
 .PHONY: end
 end:
