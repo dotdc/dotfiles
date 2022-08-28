@@ -1,6 +1,6 @@
 # dotfiles
 
-[![Build Status](https://cloud.drone.io/api/badges/dotdc/dotfiles/status.svg)](https://cloud.drone.io/dotdc/dotfiles)
+![Build Status](https://github.com/dotdc/dotfiles/actions/workflows/ci-build.yml/badge.svg)
 
 ## Description
 
