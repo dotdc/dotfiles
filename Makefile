@@ -93,6 +93,7 @@ vscode:
 	code --install-extension ms-kubernetes-tools.vscode-kubernetes-tools
 	code --install-extension ms-python.python
 	code --install-extension ms-vscode.makefile-tools
+	code --install-extension ms-vscode-remote.remote-ssh
 	code --install-extension oderwat.indent-rainbow
 	code --install-extension redhat.vscode-yaml
 	code --install-extension vscode-icons-team.vscode-icons

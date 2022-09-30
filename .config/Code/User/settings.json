@@ -1,5 +1,4 @@
 {
-    "window.zoomLevel": 1,
     "update.mode": "none",
     "update.showReleaseNotes": false,
     "telemetry.enableCrashReporter": false,
@@ -9,5 +8,28 @@
         "*.ipynb": "jupyter.notebook.ipynb"
     },
     "explorer.confirmDelete": false,
-    "workbench.iconTheme": "vscode-icons"
+    "workbench.iconTheme": "vscode-icons",
+    "editor.inlineSuggest.enabled": true,
+    "workbench.list.automaticKeyboardNavigation": false,
+    "githubPullRequests.pullBranch": "never",
+    "window.zoomLevel": 1,
+    "go.toolsManagement.autoUpdate": true,
+    "remote.SSH.defaultExtensions": [
+        "DavidAnson.vscode-markdownlint",
+        "ecmel.vscode-html-css",
+        "GitHub.remotehub",
+        "GitHub.vscode-pull-request-github",
+        "golang.go",
+        "hashicorp.terraform",
+        "ms-azuretools.vscode-docker",
+        "ms-kubernetes-tools.vscode-kubernetes-tools",
+        "ms-python.python",
+        "ms-vscode.makefile-tools",
+        "ms-vscode-remote.remote-ssh",
+        "oderwat.indent-rainbow",
+        "redhat.vscode-yaml",
+        "vscode-icons-team.vscode-icons",
+        "HashiCorp.HCL",
+        "yzhang.markdown-all-in-one"
+    ],
 }
