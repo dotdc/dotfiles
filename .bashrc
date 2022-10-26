@@ -16,6 +16,7 @@ export TERM="rxvt-unicode-256color"
 
 export VISUAL="/usr/bin/vim -p -X"
 export EDITOR="/usr/bin/vim"
+export BROWSER="brave"
 
 export HISTSIZE=5000
 export HISTFILESIZE=10000
