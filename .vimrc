@@ -42,6 +42,7 @@ Plugin 'stephpy/vim-yaml'
 Plugin 'cespare/vim-toml'
 Plugin 'hashivim/vim-terraform'
 Plugin 'hashivim/vim-packer'
+Plugin 'rust-lang/rust.vim'
 call vundle#end()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
