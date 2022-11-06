@@ -1,7 +1,7 @@
 [user]
   name = David
-  email = davidcalvertfr@gmail.com
-  signingkey = 56431FEC46391E05
+  email = david@0xdc.me
+  signingkey = 5A574FA7E8F3D9F5
 [commit]
   gpgSign = true
 [alias]
