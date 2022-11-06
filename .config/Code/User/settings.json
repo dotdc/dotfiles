@@ -12,7 +12,6 @@
     "editor.inlineSuggest.enabled": true,
     "workbench.list.automaticKeyboardNavigation": false,
     "githubPullRequests.pullBranch": "never",
-    "window.zoomLevel": 1,
     "go.toolsManagement.autoUpdate": true,
     "remote.SSH.defaultExtensions": [
         "DavidAnson.vscode-markdownlint",
@@ -32,4 +31,5 @@
         "HashiCorp.HCL",
         "yzhang.markdown-all-in-one"
     ],
+    "window.zoomLevel": 1,
 }
