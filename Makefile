@@ -102,6 +102,17 @@ vscode:
 	code --install-extension HashiCorp.HCL
 	code --install-extension yzhang.markdown-all-in-one
 
+.PHONY: macos
+macos:
+	################################################################################
+	# macos
+	################################################################################
+	@cp ~/.Brewfile ~/.bak/.Brewfile &> /dev/null | true
+	@rm ~/.Brewfile &> /dev/null | true
+	ln -s ${PWD}/.Brewfile ~/.Brewfile
+
+	brew bundle install --global
+
 .PHONY: end
 end:
 	@echo "A copy of the previous dotfiles are available in the '~/.bak' folder."
