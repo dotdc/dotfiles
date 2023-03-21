@@ -27,6 +27,16 @@ bash:
 	@rm ~/.bash_profile &> /dev/null | true
 	ln -s ${PWD}/.bash_profile ~/.bash_profile
 
+.PHONY: zsh
+zsh:
+	@cp ~/.zshrc ~/.bak/ &> /dev/null | true
+	@rm ~/.zshrc &> /dev/null | true
+	ln -s ${PWD}/.zshrc ~/.zshrc
+
+	@cp ~/.p10k.zsh ~/.bak/ &> /dev/null | true
+	@rm ~/.p10k.zsh &> /dev/null | true
+	ln -s ${PWD}/.p10k.zsh ~/.p10k.zsh
+
 .PHONY: fonts
 fonts:
 	@cp -r ~/.fonts ~/.bak/ &> /dev/null | true
