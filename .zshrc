@@ -9,8 +9,19 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Vi key bindings
-bindkey -v
+################################################################################
+# Key bindings
+################################################################################
+
+# Emacs style
+bindkey -e
+
+# Reverse incremental search
+bindkey '^R' history-incremental-search-backward
+
+# Alternative bindings to CTRL+A & CTRL+E
+bindkey '\e[H' beginning-of-line
+bindkey '\e[F' end-of-line
 
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/david/.zshrc'
@@ -34,13 +45,9 @@ export LANG="en_US.UTF-8"
 export VISUAL="/usr/bin/vim -p -X"
 export EDITOR="/usr/bin/vim"
 
-export HISTSIZE=5000
-export HISTFILE="~/.histfile"
-export SAVEHIST=1000
-export HISTFILESIZE=10000
-export HISTCONTROL=ignoreboth
-export HISTIGNORE="pwd:clear"
-export HISTTIMEFORMAT="| %d/%m/%Y %T | "
+HISTSIZE=10000
+SAVEHIST=${HISTSIZE}
+HISTFILE=~/.zsh_history
 
 ################################################################################
 # Aliases
@@ -79,7 +86,6 @@ export P=$'\e[95m' # Purple
 ################################################################################
 
 # Aliases
-alias k="kubectl"
 alias kl="kubectl config get-contexts"
 alias kc="kubectl config set current-context"
 
@@ -120,24 +126,31 @@ tab()
 # Plugins
 ################################################################################
 
+# Doc: https://github.com/ohmyzsh/ohmyzsh/wiki/plugins
 plugins=(
+  ansible
+  docker
+  emoji
   git
-  bundler
-  dotenv
+  gpg-agent
+  helm
+  kubectl
   macos
-  rake
-  rbenv
-  ruby
+  rust
+  ssh-agent
 )
 
 ################################################################################
 # Themes
 ################################################################################
 
-#eval "$(starship init zsh)"
-
 # powerlevel10k
-source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
+
+# Source powerlevel10k theme file on Arch or MacOS
+if [[ "$(uname -s)" == "Linux" ]] ; then
+    source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+elif [[ "$(uname -s)" == "Darwin" ]] ; then
+    source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
+fi
