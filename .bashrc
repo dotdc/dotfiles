@@ -76,6 +76,9 @@ kns()
     kubectl config set-context --current --namespace="${1}"
 }
 
+# Terraform
+complete -C /usr/bin/terraform terraform
+
 # AWS CLI
 # shellcheck disable=SC1090
 [[ $(type aws) ]] && complete -C /usr/bin/aws_completer aws
@@ -149,3 +152,4 @@ fi
 
 # shellcheck disable=SC1090,SC2015
 [[ -f ~/.bashrc_extra ]] && . ~/.bashrc_extra || true
+
