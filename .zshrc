@@ -6,7 +6,7 @@
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
 ################################################################################
@@ -128,16 +128,16 @@ tab()
 
 # Doc: https://github.com/ohmyzsh/ohmyzsh/wiki/plugins
 plugins=(
-  ansible
-  docker
-  emoji
-  git
-  gpg-agent
-  helm
-  kubectl
-  macos
-  rust
-  ssh-agent
+    ansible
+    docker
+    emoji
+    git
+    gpg-agent
+    helm
+    kubectl
+    macos
+    rust
+    ssh-agent
 )
 
 ################################################################################
