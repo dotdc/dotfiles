@@ -96,6 +96,8 @@ vscode:
 	code --install-extension DavidAnson.vscode-markdownlint
 	code --install-extension ecmel.vscode-html-css
 	code --install-extension fermyon.spin-vscode
+	code --install-extension github.copilot
+	code --install-extension github.github-vscode-theme
 	code --install-extension GitHub.remotehub
 	code --install-extension GitHub.vscode-pull-request-github
 	code --install-extension golang.go
