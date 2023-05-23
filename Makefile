@@ -3,6 +3,9 @@
 SHELL := /bin/bash
 .DEFAULT_GOAL := dotfiles
 
+.PHONY: minimal
+minimal: init bash end
+
 .PHONY: dotfiles
 dotfiles: init bash fonts git tmux xorg end
 
@@ -11,9 +14,6 @@ all: dotfiles vim vscode
 
 .PHONY: init
 init:
-	################################################################################
-	# dotfiles
-	################################################################################
 	@mkdir -p ~/.bak
 	@echo "Created ~/.bak folder"
 
@@ -67,9 +67,6 @@ xorg:
 
 .PHONY: vim
 vim:
-	################################################################################
-	# vim
-	################################################################################
 	@cp ~/.vimrc ~/.bak/ &> /dev/null | true
 	@rm ~/.vimrc &> /dev/null | true
 	ln -s ${PWD}/.vimrc ~/.vimrc
@@ -85,9 +82,6 @@ vim:
 
 .PHONY: vscode
 vscode:
-	################################################################################
-	# vscode
-	################################################################################
 	@cp ~/.config/Code/User/settings.json ~/.bak/vscode.settings.json &> /dev/null | true
 	@rm ~/.config/Code/User/settings.json &> /dev/null | true
 	@mkdir -p ~/.config/Code/User
@@ -113,17 +107,6 @@ vscode:
 	code --install-extension vscode-icons-team.vscode-icons
 	code --install-extension HashiCorp.HCL
 	code --install-extension yzhang.markdown-all-in-one
-
-.PHONY: macos
-macos:
-	################################################################################
-	# macos
-	################################################################################
-	@cp ~/.Brewfile ~/.bak/.Brewfile &> /dev/null | true
-	@rm ~/.Brewfile &> /dev/null | true
-	ln -s ${PWD}/.Brewfile ~/.Brewfile
-
-	brew bundle install --global
 
 .PHONY: end
 end:
