@@ -93,6 +93,7 @@ vscode:
 	code --install-extension github.copilot
 	code --install-extension github.github-vscode-theme
 	code --install-extension GitHub.remotehub
+	code --install-extension GitHub.vscode-github-actions
 	code --install-extension GitHub.vscode-pull-request-github
 	code --install-extension golang.go
 	code --install-extension hashicorp.terraform
