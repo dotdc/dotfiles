@@ -33,6 +33,6 @@
         "HashiCorp.HCL",
         "yzhang.markdown-all-in-one"
     ],
-    "window.zoomLevel": 1,
     "workbench.colorTheme": "GitHub Dark",
+    "window.zoomLevel": 1,
 }
