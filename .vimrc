@@ -49,7 +49,9 @@ call vundle#end()
 " Vim Airline
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+set t_Co=256
 set laststatus=2
+set encoding=utf-8
 let g:airline_powerline_fonts = 1
 let g:airline_theme = "powerlineish"
 let g:airline#extensions#tabline#enabled = 1
