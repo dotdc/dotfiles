@@ -33,7 +33,7 @@ alias vi="vim -b"
 alias vim="vim -b"
 alias ls="ls --color=auto"
 alias ll="ls -hails --color=auto"
-alias grep="grep --color=auto --binary-files=without-match --devices=skip"
+alias grep="grep --color=auto --binary-files=without-match --devices=skip --exclude-dir={.git,.svn,.terraform}"
 alias tree="tree -C --dirsfirst"
 alias wan="dig +short myip.opendns.com @resolver1.opendns.com"
 
