@@ -62,7 +62,7 @@ export P=$'\e[95m' # Purple
 
 # Aliases and autocomplete
 # shellcheck disable=SC1090
-[[ $(type kubectl) ]] && source <(kubectl completion bash)
+command -v kubectl &> /dev/null && source <(kubectl completion bash)
 alias k="kubectl"
 complete -F __start_kubectl k
 
@@ -77,11 +77,10 @@ kns()
 }
 
 # Terraform
-complete -C /usr/bin/terraform terraform
+command -v terraform &> /dev/null && complete -C "$(command -v terraform)" terraform
 
 # AWS CLI
-# shellcheck disable=SC1090
-[[ $(type aws) ]] && complete -C /usr/bin/aws_completer aws
+command -v aws &> /dev/null && command -v aws_completer &> /dev/null && complete -C "$(command -v aws_completer)" aws
 
 ################################################################################
 # Functions
