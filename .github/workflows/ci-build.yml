@@ -22,5 +22,8 @@ jobs:
         run: |
           apt update && apt install -y bash git make shellcheck vim
           make dotfiles vim
-          shellcheck ~/.bashrc
-          shellcheck ~/.bash_profile
+          shellcheck \
+            ~/.bashrc \
+            ~/.bash_profile \
+            ~/.shellrc \
+            ~/.zshrc

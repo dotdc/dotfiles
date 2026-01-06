@@ -4,10 +4,10 @@ SHELL := /bin/bash
 .DEFAULT_GOAL := dotfiles
 
 .PHONY: minimal
-minimal: init bash end
+minimal: init shell end
 
 .PHONY: dotfiles
-dotfiles: init bash fonts git tmux xorg end
+dotfiles: init shell fonts git tmux xorg end
 
 .PHONY: all
 all: dotfiles vim vscode
@@ -17,8 +17,8 @@ init:
 	@mkdir -p ~/.bak
 	@echo "Created ~/.bak folder"
 
-.PHONY: bash
-bash:
+.PHONY: shell
+shell:
 	@cp ~/.bashrc ~/.bak/ &> /dev/null | true
 	@rm ~/.bashrc &> /dev/null | true
 	ln -s ${PWD}/.bashrc ~/.bashrc
@@ -27,15 +27,13 @@ bash:
 	@rm ~/.bash_profile &> /dev/null | true
 	ln -s ${PWD}/.bash_profile ~/.bash_profile
 
-.PHONY: zsh
-zsh:
+	@cp ~/.shellrc ~/.bak/ &> /dev/null | true
+	@rm ~/.shellrc &> /dev/null | true
+	ln -s ${PWD}/.shellrc ~/.shellrc
+
 	@cp ~/.zshrc ~/.bak/ &> /dev/null | true
 	@rm ~/.zshrc &> /dev/null | true
 	ln -s ${PWD}/.zshrc ~/.zshrc
-
-	@cp ~/.p10k.zsh ~/.bak/ &> /dev/null | true
-	@rm ~/.p10k.zsh &> /dev/null | true
-	ln -s ${PWD}/.p10k.zsh ~/.p10k.zsh
 
 .PHONY: fonts
 fonts:
