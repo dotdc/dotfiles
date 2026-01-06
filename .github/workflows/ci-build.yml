@@ -16,7 +16,7 @@ jobs:
 
     steps:
       # Doc: https://github.com/marketplace/actions/checkout
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Install deps, make & lint
         run: |
