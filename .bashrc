@@ -16,13 +16,7 @@ BLUE=$(echo -e "\[\e[38;5;45m\]")
 GREEN=$(echo -e "\[\e[38;5;46m\]")
 RED=$(echo -e "\[\e[38;5;204m\]")
 
-# Display the current git branch
-__git_ps1()
-{
-    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
-}
-
-# Print return code if not 0 
+# Print return code if not 0
 __prompt_command()
 {
     EXIT=$?

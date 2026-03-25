@@ -1,13 +1,13 @@
-#!/bin/bash
+# shellcheck disable=SC2148
+
 ################################################################################
 # Environment Variables
 ################################################################################
 
 export LANG="en_US.UTF-8"
-export TERM="rxvt-unicode-256color"
 
-export VISUAL="/usr/bin/vim -p -X"
-export EDITOR="/usr/bin/vim"
+export VISUAL="vim -p -X"
+export EDITOR="vim"
 export BROWSER="brave"
 
 export HISTSIZE=5000
@@ -30,12 +30,14 @@ alias tree="tree -C --dirsfirst"
 alias wan="dig +short myip.opendns.com @resolver1.opendns.com"
 
 # Archlinux
-alias pacman="sudo pacman --color auto"
-alias yay="yay --color auto"
+[[ -f /etc/arch-release ]] && alias pacman="sudo pacman --color auto"
+[[ -f /etc/arch-release ]] && alias yay="yay --color auto"
+
+# Docker
+[[ "$(uname -s)" != "Darwin" ]] && alias docker="sudo docker"
 
 # Other
 alias ip="ip -c"
-alias docker="sudo docker"
 
 ################################################################################
 # Colors
@@ -52,13 +54,7 @@ export P=$'\e[95m' # Purple
 # Cloud / Kubernetes
 ################################################################################
 
-# Aliases and autocomplete
-# shellcheck disable=SC1090
-command -v kubectl &> /dev/null && source <(kubectl completion bash)
 alias k="kubectl"
-complete -F __start_kubectl k
-
-# Aliases to get & update the current context
 alias kl="kubectl config get-contexts"
 alias kc="kubectl config set current-context"
 
@@ -68,15 +64,25 @@ kns()
     kubectl config set-context --current --namespace="${1}"
 }
 
-# Terraform
-command -v terraform &> /dev/null && complete -C "$(command -v terraform)" terraform
-
-# AWS CLI
-command -v aws &> /dev/null && command -v aws_completer &> /dev/null && complete -C "$(command -v aws_completer)" aws
+# Bash completion
+# shellcheck disable=SC1090
+if [[ -n "${BASH_VERSION}" ]]; then
+    command -v kubectl &> /dev/null && source <(kubectl completion bash)
+    complete -F __start_kubectl k
+    command -v terraform &> /dev/null && complete -C "$(command -v terraform)" terraform
+    command -v aws &> /dev/null && command -v aws_completer &> /dev/null && complete -C "$(command -v aws_completer)" aws
+fi
 
 ################################################################################
 # Functions
 ################################################################################
+
+# Display the current git branch
+__git_ps1()
+{
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
 
 # Molokai colors for man
 man()
@@ -106,7 +112,7 @@ tab()
 ################################################################################
 
 # Start tmux automatically
-if [[ ! "${TMUX_PANE}" && "${TERM_PROGRAM}" != "vscode" ]] ; then
+if [[ -z "${TMUX}" && -z "${TMUX_PANE}" && "${TERM_PROGRAM}" != "vscode" ]] ; then
     tmux new-session -n LAPTOP
 fi
 
@@ -117,3 +123,9 @@ fi
 # shellcheck disable=SC1091
 [[ -f "${HOME}"/.shellrc_extra ]] && . "${HOME}"/.shellrc_extra
 
+
+################################################################################
+# AI
+################################################################################
+
+export RTK_TELEMETRY_DISABLED=1
