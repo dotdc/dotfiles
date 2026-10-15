@@ -34,3 +34,4 @@ export PROMPT_COMMAND=__prompt_command
 
 # shellcheck disable=SC1091
 [[ -f "${HOME}"/.shellrc ]] && . "${HOME}"/.shellrc
+export PATH="$HOME/.local/bin:$PATH"
